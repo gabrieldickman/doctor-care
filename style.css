@@ -33,6 +33,8 @@ body {
   font-size: 1.6rem;
 
   text-align: center;
+
+  overflow: overlay;
 }
 
 .wrapper {
@@ -169,18 +171,31 @@ nav .wrapper {
 nav.scroll {
   background-color: var(--primary-color);
   width: 100vw;
-
 }
 
 nav.scroll svg:nth-child(1) path {
   fill: white;
 }
 
-nav.scroll svg:nth-child(2) path {
+nav.scroll button path {
   stroke: white;
 }
 
+nav button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
 /* ==== MENU-EXPANDED ==== */
+
+body.menu-expanded {
+  overflow: hidden;
+}
+
+body.menu-expanded > :not(nav) {
+  display: none;
+}
 
 .menu,
 .close-menu,
@@ -203,8 +218,90 @@ body.menu-expanded .menu {
 
   width: 100vw;
   height: 100vh;
+
+  padding-top: var(--nav-height);
 }
 
 body.menu-expanded nav {
   position: relative;
+}
+
+.menu ul:nth-child(1) {
+  display: flex;
+  flex-direction: column;
+  gap: 4.8rem;
+
+  margin-top: 6rem;
+
+  font-size: 2.4rem;
+  font-weight: 700;
+  line-height: 3.1rem;
+}
+
+.menu ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+.menu .button {
+  background: white;
+  border-radius: 4rem;
+  font-weight: 700;
+  font-size: 1.8rem;
+  line-height: 2.3rem;
+  text-transform: uppercase;
+  text-decoration: none;
+
+  color: var(--primary-color);
+
+  display: inline-block;
+  padding: 1.6rem 3.2rem;
+
+  margin-top: 4.8rem;
+  margin-bottom: 8rem;
+}
+
+.social-links {
+  display: flex;
+  gap: 3.2rem;
+  align-items: center;
+  justify-content: center;
+}
+
+body.menu-expanded .logo,
+body.menu-expanded button {
+  position: relative;
+  z-index: 100;
+}
+
+body.menu-expanded .logo path {
+  fill: white;
+}
+
+body.menu-expanded button path {
+  stroke: white;
+}
+
+/*=== SERVICES ===*/
+
+#services header h4{
+  font-size: 1.4rem;
+  line-height: 150%;
+  letter-spacing: 0.08rem;
+
+  text-transform: lowercase;
+
+  color: var(--primary-color);
+
+  margin-bottom: 1.6rem;
+}
+
+#services header h2 {
+  line-height: 3rem;
+  line-height: 3.9rem;
+
+  color: var(--headline);
+
+  margin-bottom: 6rem;
+
 }
